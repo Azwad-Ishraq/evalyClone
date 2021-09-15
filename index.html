@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- ------------Local Style Sheet----------------- -->
+    <link rel="stylesheet" href="style.css">
+    <!-- ------------Local Style Sheet----------------- -->
+
+
+
+    <!-- ------------font awesome----------------- -->
+    <script src="https://kit.fontawesome.com/484aea53c5.js" crossorigin="anonymous"></script>
+    <!-- ------------font awesome----------------- -->
+
+
+
+    <!-- ------------google font----------------- -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <!-- ------------google font----------------- -->
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="first-nav">
+                <div class="first-nav-1 first-nav-item">
+                    <h4><i class="fas fa-phone-volume nav-icon"></i> 09638111666</h4>
+                    <h4><i class="far fa-envelope nav-icon"></i>    support@evaly.com.bd
+                    </h4>
+                </div>
+                <div class="first-nav-2 first-nav-item">
+                    <h4><i class="fas fa-mobile-alt nav-icon"></i> Save big on our app</h4>
+                    
+                </div>
+            </div>
+            <div class="second-nav">
+               <div class="logo">
+               <img src="images/logos/Evaly_logo.png" alt="">
+               </div>
+               <div class="search-box">
+                <span>
+                    <input class="search-input" placeholder="Search for...." type="text">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </span>
+               </div>
+               <div class="second-nav-icons">
+                <i onclick="showCart()" title="Your Cart" class="fas fa-shopping-bag second-nav-icon"></i>
+                <i title="Notification" class="far fa-bell second-nav-icon"></i>
+                <i title="Messages" class="far fa-comment-alt second-nav-icon"></i>
+                <i title="Your Profile" class="far fa-user second-nav-icon"></i>
+               </div>
+               
+            </div>
+            <div class="third-nav">
+                   <div class="third-nav-items">
+                       <div class="cata">
+                        <i class="fas fa-bars"></i>
+                        <h1>Catagories</h1>
+                        <i class="fas fa-arrow-down"></i>
+                       </div>
+                       <div class="third-nav-li">
+                        <ul>
+                            <li>All Shops</li>
+                            <li>Campaigns</li>
+                            <li>Top-up</li>
+                            <li>Express</li>
+                            <li>T10</li>
+                        </ul>
+                    </div>
+                    <div class="third-nav-menu">
+                        <ul>
+                            <li>News Feed</li>
+                            <li>Merchant Zone</li>
+                            <li>Help</li>
+                        </ul>
+                    </div>
+                       
+                   </div>
+            </div>
+        </nav>
+
+        <section>
+            <div class="catas">
+                <ul>
+                    <li>Desktop <i class="fas fa-arrow-right"></i></li>
+                    <li>Laptop <i class="fas fa-arrow-right"></i></li>
+                    <li>Men's Watch <i class="fas fa-arrow-right"></i></li>
+                    <li>Microwave Oven <i class="fas fa-arrow-right"></i></li>
+                    <li>Motor Bike <i class="fas fa-arrow-right"></i></li>
+                    <li>Refrigerator <i class="fas fa-arrow-right"></i></li>
+                    <li>Smart Phone <i class="fas fa-arrow-right"></i></li>
+                    <li>Smart TV & Android TV <i class="fas fa-arrow-right"></i></li>
+                    <li>Speaker <i class="fas fa-arrow-right"></i></li>
+                    <li>Split AC <i class="fas fa-arrow-right"></i></li>
+                </ul>
+            </div>
+            <div class="slider-div">
+                <div class="slider">
+                    <img id="slider-img" style="position: relative;" src="images/slider images/1.jfif" alt="">
+                    <div style="display: flex; justify-content: space-between; width: 50%; position: absolute;" class="slider-btn">
+                        <i onclick="sliderPrev()" style="font-size: 30px;cursor: pointer; color: white;" class="fas fa-arrow-left"></i>
+                        <i onclick="sliderNext()" style="font-size: 30px;cursor: pointer; color: white;" class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="ad">
+                    <img style="width: 43%;" src="images/ad/1.jpeg" alt="">
+                    <img style="width: 600px;" src="images/ad/2.png" alt="">
+
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <div id="modal" class="modal-bg">
+            <div class="modal">
+                <div id="modal-body" class="modal-body">
+                    <img id="modal-img" src="" alt="">
+                    <h1 id="modal-title"></h1>
+                    <h3 id="modal-cata"></h3>
+                    <p id="modal-desc"></p>
+                    <h2 id="modal-price"></h2>
+                    <p ><i style="color: #cc2329;" class="fas fa-star"></i> <span id="modal-rate"></span></p>
+                </div>
+                
+                    <div class="modal-btns">
+                        <button onclick="closeModal()"  class="btn close">Close</i></button>
+                        <button id="buy-btn" class="btn buy">Buy Now</i></button>
+                    </div>
+                
+            </div>
+        </div>
+        <div id="cart-modal" class="modal-bg">
+            <div class="modal">
+                <div id="modal-body" class="modal-body">
+                    <h1>My Cart</h1>
+                    <ul id="cart-ul" class="cart-ul">
+                        <li></li>
+                        
+                    </ul>
+                </div>
+                
+                    <div class="modal-btns">
+                        <button onclick="closeCartModal()"  class="btn close">Close</i></button>
+                        <button id="buy-btn" class="btn buy">Buy Now</i></button>
+                    </div>
+                
+            </div>
+        </div>
+        <section class="products-sec">
+            <div id="all-products" class="all-products">
+                <!-- <div class="product-item">
+                   
+
+                </div> -->
+                
+            </div>
+        </section>
+    </main>
+
+
+    <script src="app.js"></script>
+</body>
+</html>
