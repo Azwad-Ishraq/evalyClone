@@ -52,7 +52,7 @@ const showDetails = (id) =>{
             .then(json=>{
                
                 
-                console.log(json);
+                
                 title.innerText = json.title;
                 img.src = json.image;
                 cata.innerText = 'Category: ' + json.category;
@@ -120,6 +120,7 @@ autoSlider();
 
 
 const userCart = [];
+// const cartUl = document.getElementById('cart-ul');
 
 const addToCart = id =>{
     fetch(`https://fakestoreapi.com/products/${id}`)
@@ -130,30 +131,59 @@ const addToCart = id =>{
                     price: json.price
                 }
                 userCart.push(addedProduct);
+                console.log(userCart)
+                
+                
             });
-console.log(userCart);
+
 
 }
 
 
 
-const cartModal = document.getElementById('cart-modal');
 
+const closeCartModal = () => {
+    cartModal.classList.remove('modal-active');
+    
+}
+
+const cartModal = document.getElementById('cart-modal');
+const cartModalBody = document.getElementById('cart-modal-body');
+const cartUl = document.createElement('ul');
 const showCart = () =>{
+    
+    cartUl.textContent='';
+    cartUl.classList.add('cart-ul');
+    cartModalBody.appendChild(cartUl)
    cartModal.classList.add('modal-active');
-   const cartUl = document.getElementById('cart-ul');
+   let totalAmnt = 0;
+   const total = document.createElement('li');
+   total.innerText = `$ ${totalAmnt};`
+   
+   
+   
    for(const cartItem of userCart){
        const li = document.createElement('li');
        li.innerHTML = `
        <span>${cartItem.title}</span> <span>$${cartItem.price}</span>
        `
-       cartUl.appendChild(li);
+       console.log(cartItem.price)
+       totalAmnt +=  cartItem.price;
+        total.innerText = `Total: $ ${totalAmnt}`;
+    //    totalAmnt = totalAmnt.toFixed(2);
+       cartUl.prepend(li);
+       cartUl.appendChild(total)
    }
 
 }
 
-const closeCartModal = () => {
-    cartModal.classList.remove('modal-active')
+const showCata = () =>{
+    const catas = document.getElementById('catas');
+    catas.classList.toggle('catas-active')
 }
+
+
+
+
 
 
